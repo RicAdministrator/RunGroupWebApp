@@ -1,3 +1,19 @@
+USE [RunGroups]
+
+SELECT * FROM [dbo].[Addressses] -- has data after seed
+SELECT * FROM [dbo].[AspNetRoleClaims]	
+SELECT * FROM [dbo].[AspNetRoles] -- has data after seed
+SELECT * FROM [dbo].[AspNetUserClaims]
+SELECT * FROM [dbo].[AspNetUserLogins]
+SELECT * FROM [dbo].[AspNetUserRoles] --
+SELECT * FROM [dbo].[AspNetUsers] --
+SELECT * FROM [dbo].[AspNetUserTokens]
+SELECT * FROM [dbo].[Clubs] --
+SELECT * FROM [dbo].[Races] --
+
+---------------------------------------------
+
+
 SELECT * FROM dbo.Clubs WHERE Id = 1
 
 --UPDATE 
@@ -75,7 +91,4 @@ FROM
 --	Id = '6c402275-1721-4c21-8265-a0b99ed65242'
 
 
--------------------------------------------------------------------------------------------------------------------------------------	
-SELECT * FROM [dbo].[AspNetRoles]
-SELECT * FROM [dbo].[AspNetUserLogins]
-SELECT * FROM [dbo].[AspNetUserRoles]
+-------------------------------------------------------------------------------------------------------------------------------------

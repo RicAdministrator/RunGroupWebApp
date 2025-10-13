@@ -14,6 +14,14 @@ namespace RunGroupWebApp.Data
 
                 context.Database.EnsureCreated();
 
+                // Get SuperUser's Id
+                var superUser = context.Users.FirstOrDefault(u => u.UserName == "SuperUser1");
+                var superUserId = superUser?.Id;
+
+                // Get User's Id
+                var user = context.Users.FirstOrDefault(u => u.UserName == "User1");
+                var userId = user?.Id;
+
                 if (!context.Clubs.Any())
                 {
                     context.Clubs.AddRange(new List<Club>()
@@ -22,53 +30,57 @@ namespace RunGroupWebApp.Data
                         {
                             Title = "Running Club 1",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Description = "This is the description of the first cinema",
-                            ClubCategory = ClubCategory.City,
+                            Description = "This is the description of Running Club 1.",
+                            ClubCategory = ClubCategory.RoadRunner,
                             Address = new Address()
                             {
-                                Street = "123 Main St",
-                                City = "Charlotte",
-                                State = "NC"
-                            }
-                         },
+                                Street = "Running Club 1 St",
+                                City = "Calamba",
+                                State = "Calabarzon"
+                            },
+                            AppUserId = superUserId
+                        },
                         new Club()
                         {
                             Title = "Running Club 2",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Description = "This is the description of the first cinema",
-                            ClubCategory = ClubCategory.Endurance,
+                            Description = "This is the description of Running Club 2.",
+                            ClubCategory = ClubCategory.Womens,
                             Address = new Address()
                             {
-                                Street = "123 Main St",
-                                City = "Charlotte",
-                                State = "NC"
-                            }
+                                Street = "Running Club 2 St",
+                                City = "Makati",
+                                State = "National Capital Region (NCR)"
+                            },
+                            AppUserId = superUserId
                         },
                         new Club()
                         {
                             Title = "Running Club 3",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Description = "This is the description of the first club",
-                            ClubCategory = ClubCategory.Trail,
-                            Address = new Address()
-                            {
-                                Street = "123 Main St",
-                                City = "Charlotte",
-                                State = "NC"
-                            }
-                        },
-                        new Club()
-                        {
-                            Title = "Running Club 3",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Description = "This is the description of the first club",
+                            Description = "This is the description of Running Club 3.",
                             ClubCategory = ClubCategory.City,
                             Address = new Address()
                             {
-                                Street = "123 Main St",
-                                City = "Michigan",
-                                State = "NC"
-                            }
+                                Street = "Running Club 3 St",
+                                City = "Calamba",
+                                State = "Calabarzon"
+                            },
+                            AppUserId = userId
+                        },
+                        new Club()
+                        {
+                            Title = "Running Club 4",
+                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Description = "This is the description of Running Club 4.",
+                            ClubCategory = ClubCategory.Trail,
+                            Address = new Address()
+                            {
+                                Street = "Running Club 4 St",
+                                City = "Makati",
+                                State = "National Capital Region (NCR)"
+                            },
+                            AppUserId = userId
                         }
                     });
                     context.SaveChanges();
@@ -82,29 +94,58 @@ namespace RunGroupWebApp.Data
                         {
                             Title = "Running Race 1",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Description = "This is the description of the first race",
+                            Description = "This is the description of Running Race 1.",
                             RaceCategory = RaceCategory.Marathon,
                             Address = new Address()
                             {
-                                Street = "123 Main St",
-                                City = "Charlotte",
-                                State = "NC"
-                            }
+                                Street = "Running Race 1 St",
+                                City = "Calamba",
+                                State = "Calabarzon"
+                            },
+                            AppUserId = superUserId
                         },
                         new Race()
                         {
                             Title = "Running Race 2",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Description = "This is the description of the first race",
+                            Description = "This is the description of Running Race 2.",
                             RaceCategory = RaceCategory.Ultra,
-                            AddressId = 5,
                             Address = new Address()
                             {
-                                Street = "123 Main St",
-                                City = "Charlotte",
-                                State = "NC"
-                            }
-                        }
+                                Street = "Running Race 2 St",
+                                City = "Makati",
+                                State = "National Capital Region (NCR)"
+                            },
+                            AppUserId = superUserId
+                        },
+                        new Race()
+                        {
+                            Title = "Running Race 3",
+                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Description = "This is the description of Running Race 3.",
+                            RaceCategory = RaceCategory.FiveK,
+                            Address = new Address()
+                            {
+                                Street = "Running Race 3 St",
+                                City = "Calamba",
+                                State = "Calabarzon"
+                            },
+                            AppUserId = userId
+                        },
+                        new Race()
+                        {
+                            Title = "Running Race 4",
+                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Description = "This is the description of Running Race 4.",
+                            RaceCategory = RaceCategory.TenK,
+                            Address = new Address()
+                            {
+                                Street = "Running Race 4 St",
+                                City = "Makati",
+                                State = "National Capital Region (NCR)"
+                            },
+                            AppUserId = userId
+                        },
                     });
                     context.SaveChanges();
                 }
@@ -125,45 +166,45 @@ namespace RunGroupWebApp.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "teddysmithdeveloper@gmail.com";
+                string adminUserEmail = "super_user_1@gmail.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
                 {
                     var newAdminUser = new AppUser()
                     {
-                        UserName = "teddysmithdev",
+                        UserName = "SuperUser1",
                         Email = adminUserEmail,
                         EmailConfirmed = true,
                         Address = new Address()
                         {
-                            Street = "123 Main St",
-                            City = "Charlotte",
-                            State = "NC"
+                            Street = "Super User 1 St",
+                            City = "Calamba",
+                            State = "Calabarzon"
                         }
                     };
-                    await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+                    await userManager.CreateAsync(newAdminUser, "P@ssword1");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
 
-                string appUserEmail = "user@etickets.com";
+                string appUserEmail = "user_1@gmail.com";
 
                 var appUser = await userManager.FindByEmailAsync(appUserEmail);
                 if (appUser == null)
                 {
                     var newAppUser = new AppUser()
                     {
-                        UserName = "app-user",
+                        UserName = "User1",
                         Email = appUserEmail,
                         EmailConfirmed = true,
                         Address = new Address()
                         {
-                            Street = "123 Main St",
-                            City = "Charlotte",
-                            State = "NC"
+                            Street = "User 1 St",
+                            City = "Makati",
+                            State = "National Capital Region (NCR)"
                         }
                     };
-                    await userManager.CreateAsync(newAppUser, "Coding@1234?");
+                    await userManager.CreateAsync(newAppUser, "P@ssword1");
                     await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
                 }
             }
