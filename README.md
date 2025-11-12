@@ -9,7 +9,7 @@ How to Drop Create a DB:
 7. Package Manager Console > Run "Update-Database". This will create the db.
 8. Check tables > run Database\CheckDataAfterDropCreateSeed.sql > tables should have 0 rows
 9. Package Manager Console > pwd
-10. If you are already in the "RunGroupWebApp" folder, move to step 11. If not, Package Manager Console > cd RunGroupWebApp
+10. Make sure you are one folder above the Migrations folder (\RunGroupWebApp\RunGroupWebApp). Peform cd if needed (E.g. cd RunGroupWebApp)
 11. Package Manager Console > dotnet run seeddata
 12. Check tables > run Database\CheckDataAfterDropCreateSeed.sql > tables should have rows
 
@@ -24,3 +24,5 @@ How to Create a Single Migration File:
 ## Others
 Notes:
 1. C:\Users\Richard\source\repos\RunGroupWebApp
+2. super_user_1@gmail.com : P@ssword1
+3. user_1@gmail.com : P@ssword1

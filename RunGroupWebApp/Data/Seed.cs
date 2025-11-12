@@ -29,7 +29,7 @@ namespace RunGroupWebApp.Data
                         new Club()
                         {
                             Title = "Running Club 1",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1760907858/dowevsz13navftg2d0tc.png",
                             Description = "This is the description of Running Club 1.",
                             ClubCategory = ClubCategory.RoadRunner,
                             Address = new Address()
@@ -43,21 +43,21 @@ namespace RunGroupWebApp.Data
                         new Club()
                         {
                             Title = "Running Club 2",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1762315586/swytepce5retwnsmrpav.png",
                             Description = "This is the description of Running Club 2.",
                             ClubCategory = ClubCategory.Womens,
                             Address = new Address()
                             {
                                 Street = "Running Club 2 St",
-                                City = "Makati",
-                                State = "National Capital Region (NCR)"
+                                City = "Manila",
+                                State = "Metro Manila"
                             },
                             AppUserId = superUserId
                         },
                         new Club()
                         {
                             Title = "Running Club 3",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://res.cloudinary.com/de5wgq4ws/image/upload/v1760907232/rxbircdztsprbdoximag.png",
                             Description = "This is the description of Running Club 3.",
                             ClubCategory = ClubCategory.City,
                             Address = new Address()
@@ -71,14 +71,14 @@ namespace RunGroupWebApp.Data
                         new Club()
                         {
                             Title = "Running Club 4",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1762315906/vxp5uf2qjkuyiqytz9hf.png",
                             Description = "This is the description of Running Club 4.",
                             ClubCategory = ClubCategory.Trail,
                             Address = new Address()
                             {
                                 Street = "Running Club 4 St",
-                                City = "Makati",
-                                State = "National Capital Region (NCR)"
+                                City = "Manila",
+                                State = "Metro Manila"
                             },
                             AppUserId = userId
                         }
@@ -113,8 +113,8 @@ namespace RunGroupWebApp.Data
                             Address = new Address()
                             {
                                 Street = "Running Race 2 St",
-                                City = "Makati",
-                                State = "National Capital Region (NCR)"
+                                City = "Manila",
+                                State = "Metro Manila"
                             },
                             AppUserId = superUserId
                         },
@@ -141,8 +141,8 @@ namespace RunGroupWebApp.Data
                             Address = new Address()
                             {
                                 Street = "Running Race 4 St",
-                                City = "Makati",
-                                State = "National Capital Region (NCR)"
+                                City = "Manila",
+                                State = "Metro Manila"
                             },
                             AppUserId = userId
                         },
@@ -200,8 +200,8 @@ namespace RunGroupWebApp.Data
                         Address = new Address()
                         {
                             Street = "User 1 St",
-                            City = "Makati",
-                            State = "National Capital Region (NCR)"
+                            City = "Manila",
+                            State = "Metro Manila"
                         }
                     };
                     await userManager.CreateAsync(newAppUser, "P@ssword1");
