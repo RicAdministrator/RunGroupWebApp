@@ -12,7 +12,7 @@ using RunGroupWebApp.Data;
 namespace RunGroupWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251112015002_Initial")]
+    [Migration("20251113031848_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

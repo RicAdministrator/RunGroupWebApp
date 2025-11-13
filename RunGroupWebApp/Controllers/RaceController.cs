@@ -114,7 +114,8 @@ namespace RunGroupWebApp.Controllers
 					Image = photoResult.Url.ToString(),
 					AddressId = raceVM.AddressId,
 					Address = raceVM.Address,
-					RaceCategory = raceVM.RaceCategory
+					RaceCategory = raceVM.RaceCategory,
+					AppUserId = userRace.AppUserId
 				};
 
 				_raceRepository.Update(race);

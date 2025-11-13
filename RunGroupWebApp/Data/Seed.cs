@@ -93,7 +93,7 @@ namespace RunGroupWebApp.Data
                         new Race()
                         {
                             Title = "Running Race 1",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1762914698/myot0xghkczdzckjuxxu.png",
                             Description = "This is the description of Running Race 1.",
                             RaceCategory = RaceCategory.Marathon,
                             Address = new Address()
@@ -107,7 +107,7 @@ namespace RunGroupWebApp.Data
                         new Race()
                         {
                             Title = "Running Race 2",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1762914799/lolkgas2m4d5mudw1e70.png",
                             Description = "This is the description of Running Race 2.",
                             RaceCategory = RaceCategory.Ultra,
                             Address = new Address()
@@ -121,7 +121,7 @@ namespace RunGroupWebApp.Data
                         new Race()
                         {
                             Title = "Running Race 3",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1762915014/zwvhvkv9xz6gyhzotogl.png",
                             Description = "This is the description of Running Race 3.",
                             RaceCategory = RaceCategory.FiveK,
                             Address = new Address()
@@ -135,7 +135,7 @@ namespace RunGroupWebApp.Data
                         new Race()
                         {
                             Title = "Running Race 4",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1762915175/usmuflfzamxtomtbpoqs.png",
                             Description = "This is the description of Running Race 4.",
                             RaceCategory = RaceCategory.TenK,
                             Address = new Address()
@@ -176,6 +176,7 @@ namespace RunGroupWebApp.Data
                         UserName = "SuperUser1",
                         Email = adminUserEmail,
                         EmailConfirmed = true,
+                        ProfileImageUrl = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1763003492/agai7qmtiekuj36zlvdd.png",
                         Address = new Address()
                         {
                             Street = "Super User 1 St",
@@ -197,6 +198,7 @@ namespace RunGroupWebApp.Data
                         UserName = "User1",
                         Email = appUserEmail,
                         EmailConfirmed = true,
+                        ProfileImageUrl = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1763003507/uszxeym9yuskqc1ewgtd.png",
                         Address = new Address()
                         {
                             Street = "User 1 St",

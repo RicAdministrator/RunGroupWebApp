@@ -114,9 +114,10 @@ namespace RunGroupWebApp.Controllers
 					Image = photoResult.Url.ToString(),
 					AddressId = clubVM.AddressId,
 					Address = clubVM.Address,
-					ClubCategory = clubVM.ClubCategory
-				};
-
+					ClubCategory = clubVM.ClubCategory,
+					AppUserId = userClub.AppUserId
+				};				
+				
 				_clubRepository.Update(club);
 
 				return RedirectToAction("Index");
