@@ -31,8 +31,9 @@
 						@if (User.Identity.IsAuthenticated)
 						{
 							<li class="nav-item">
-								<a class="nav-link text-dark @(currentController == "User" && currentAction == "Index" ? "active" : "")"
-								   asp-area="" asp-controller="User" asp-action="Index">Runners</a>
+								<a class="nav-link text-dark 
+									@(currentController == "User" && (currentAction == "Index" || currentAction == "Detail") ? "active" : "")"
+									asp-area="" asp-controller="User" asp-action="Index">Runners</a>
 							</li>
 						}
 						<li class="nav-item">

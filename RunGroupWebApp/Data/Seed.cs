@@ -177,12 +177,10 @@ namespace RunGroupWebApp.Data
                         Email = adminUserEmail,
                         EmailConfirmed = true,
                         ProfileImageUrl = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1763003492/agai7qmtiekuj36zlvdd.png",
-                        Address = new Address()
-                        {
-                            Street = "Super User 1 St",
-                            City = "Calamba",
-                            State = "Calabarzon"
-                        }
+                        Pace = 10,
+                        Mileage = 1,
+                        City = "Calamba",
+                        State = "Calabarzon"
                     };
                     await userManager.CreateAsync(newAdminUser, "P@ssword1");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
@@ -199,12 +197,10 @@ namespace RunGroupWebApp.Data
                         Email = appUserEmail,
                         EmailConfirmed = true,
                         ProfileImageUrl = "http://res.cloudinary.com/de5wgq4ws/image/upload/v1763003507/uszxeym9yuskqc1ewgtd.png",
-                        Address = new Address()
-                        {
-                            Street = "User 1 St",
-                            City = "Manila",
-                            State = "Metro Manila"
-                        }
+                        Pace = 22,
+                        Mileage = 2,
+                        City = "Manila",
+                        State = "Metro Manila"
                     };
                     await userManager.CreateAsync(newAppUser, "P@ssword1");
                     await userManager.AddToRoleAsync(newAppUser, UserRoles.User);

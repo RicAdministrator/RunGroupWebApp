@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using RunGroupWebApp.Helpers;
 using RunGroupWebApp.Interfaces;
 using RunGroupWebApp.Models;
+using RunGroupWebApp.Repository;
 using RunGroupWebApp.ViewModels;
 
 namespace RunGroupWebApp.Controllers
@@ -14,11 +15,13 @@ namespace RunGroupWebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IClubRepository _clubRepository;
+        private readonly IRaceRepository _raceRepository;
 
-        public HomeController(ILogger<HomeController> logger, IClubRepository clubRepository)
+        public HomeController(ILogger<HomeController> logger, IClubRepository clubRepository, IRaceRepository raceRepository)
         {
             _logger = logger;
             _clubRepository = clubRepository;
+            _raceRepository = raceRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -37,10 +40,12 @@ namespace RunGroupWebApp.Controllers
                 if (homeViewModel.City != null)
                 {
                     homeViewModel.Clubs = await _clubRepository.GetClubByCity(homeViewModel.City);
+                    homeViewModel.Races = await _raceRepository.GetAllRacesByCity(homeViewModel.City);
                 }
                 else
                 {
                     homeViewModel.Clubs = null;
+                    homeViewModel.Races = null;
                 }
                 return View(homeViewModel);
             }
