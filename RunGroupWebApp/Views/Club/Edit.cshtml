@@ -9,39 +9,46 @@
 		<input asp-for="Title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title">
 		<span asp-validation-for="Title" class="text-danger"></span>
 	</div>
-	<div class="form-group">
+	<div class="form-group" style="padding-top:20px;">
 		<label asp-for="Description">Description</label>
 		<input asp-for="Description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Description">
 		<span asp-validation-for="Title" class="text-danger"></span>
 	</div>
-
-	<div class="form-group">
+	<div class="form-group" style="padding-top:20px;">
 		<label asp-for="ClubCategory">ClubCategory</label>
 		<select asp-for="ClubCategory" asp-items="@Html.GetEnumSelectList<ClubCategory>()" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ClubCategory">
 			<option>--Select--</option>
-
 		</select>
 		<span asp-validation-for="ClubCategory" class="text-danger"></span>
 	</div>
-	<div class="form-group">
+	<div class="form-group" style="padding-top:20px;">
 		<label asp-for="Address.Street">Street</label>
 		<input asp-for="Address.Street" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Street">
 		<span asp-validation-for="Address.Street" class="text-danger"></span>
 	</div>
-	<div class="form-group">
+	<div class="form-group" style="padding-top:20px;">
 		<label asp-for="Address.City">City</label>
 		<input asp-for="Address.City" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="City">
 		<span asp-validation-for="Address.City" class="text-danger"></span>
 	</div>
-	<div class="form-group">
+	<div class="form-group" style="padding-top:20px;">
 		<label asp-for="Address.State">State</label>
 		<input asp-for="Address.State" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="State">
 		<span asp-validation-for="Address.State" class="text-danger"></span>
 	</div>
-	<div class="form-group">
+	<div class="form-group" style="padding-top:20px;">
 		<label asp-for="Image">Image</label>
+		<div>
+			<label id="lblSavedImage">
+				Saved Image : <a href="@Model.ImageUrl" target="_blank" class="ms-2">@Model.ImageUrl</a>
+			</label>
+			<!-- preserve current URL across posts -->
+			<input type="hidden" asp-for="ImageUrl" />
+		</div>
 		<input asp-for="Image" type="file" class="form-control" placeholder="Image">
 		<span asp-validation-for="Image" class="text-danger"></span>
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<div style="padding-top:20px;">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
 </form>

@@ -20,12 +20,12 @@ namespace RunGroupWebApp.Controllers
             _httpContextAccessor = httpContextAccessor;
             _photoService = photoService;
         }
-        private void MapUserEdit(AppUser user, EditUserDashboardViewModel editVM, ImageUploadResult photoResult)
+        private void MapUserEdit(AppUser user, EditUserDashboardViewModel editVM, ImageUploadResult? photoResult)
         {
             user.Id = editVM.Id;
             user.Pace = editVM.Pace;
             user.Mileage = editVM.Mileage;
-            user.ProfileImageUrl = photoResult.Url.ToString();
+            user.ProfileImageUrl = photoResult != null ? photoResult.Url.ToString() : editVM.ProfileImageUrl;
             user.City = editVM.City;
             user.State = editVM.State;
         }
@@ -80,7 +80,9 @@ namespace RunGroupWebApp.Controllers
                 }
             }
 
-            var photoResult = await _photoService.AddPhotoAsync(editVM.Image);
+            ImageUploadResult photoResult = null;
+            if (editVM.Image != null)
+                photoResult = await _photoService.AddPhotoAsync(editVM.Image);
 
             MapUserEdit(user, editVM, photoResult);
 

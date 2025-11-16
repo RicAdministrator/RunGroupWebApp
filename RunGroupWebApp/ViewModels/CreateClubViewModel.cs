@@ -10,7 +10,7 @@ namespace RunGroupWebApp.ViewModels
 		public string Description { get; set; }
 		public Address Address { get; set; }
 		public IFormFile Image { get; set; }
-		public ClubCategory ClubCategory { get; set; }
+		public ClubCategory? ClubCategory { get; set; }
 		public string AppUserId { get; set; }
 	}
 }

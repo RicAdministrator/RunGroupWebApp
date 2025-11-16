@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RunGroupWebApp.Data;
 using RunGroupWebApp.Interfaces;
@@ -78,7 +79,8 @@ namespace RunGroupWebApp.Controllers
 				AddressId = race.AddressId,
 				Address = race.Address,
 				URL = race.Image,
-				RaceCategory = race.RaceCategory
+				RaceCategory = race.RaceCategory,
+				ImageUrl = race.Image
 			};
 			return View(raceVM);
 		}
@@ -104,15 +106,18 @@ namespace RunGroupWebApp.Controllers
 					ModelState.AddModelError("", "Could not delete photo");
 					return View(raceVM);
 				}
-				var photoResult = await _photoService.AddPhotoAsync(raceVM.Image);
+
+                ImageUploadResult photoResult = null;
+                if (raceVM.Image != null)
+                    photoResult = await _photoService.AddPhotoAsync(raceVM.Image);
 
 				var race = new Race
 				{
 					Id = id,
 					Title = raceVM.Title,
 					Description = raceVM.Description,
-					Image = photoResult.Url.ToString(),
-					AddressId = raceVM.AddressId,
+					Image = photoResult != null ? photoResult.Url.ToString() : raceVM.ImageUrl,
+                    AddressId = raceVM.AddressId,
 					Address = raceVM.Address,
 					RaceCategory = raceVM.RaceCategory,
 					AppUserId = userRace.AppUserId

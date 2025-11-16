@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RunGroupWebApp.Data;
@@ -78,7 +79,8 @@ namespace RunGroupWebApp.Controllers
 				AddressId = club.AddressId,
 				Address = club.Address,
 				URL = club.Image,
-				ClubCategory = club.ClubCategory
+				ClubCategory = club.ClubCategory,
+				ImageUrl = club.Image
 			};
 			return View(clubVM);
 		}
@@ -104,14 +106,17 @@ namespace RunGroupWebApp.Controllers
 					ModelState.AddModelError("", "Could not delete photo");
 					return View(clubVM);
 				}
-				var photoResult = await _photoService.AddPhotoAsync(clubVM.Image);
+
+                ImageUploadResult photoResult = null;
+				if (clubVM.Image != null)
+					photoResult = await _photoService.AddPhotoAsync(clubVM.Image);
 
 				var club = new Club
 				{
 					Id = id,
 					Title = clubVM.Title,
 					Description = clubVM.Description,
-					Image = photoResult.Url.ToString(),
+					Image = photoResult != null ? photoResult.Url.ToString() : clubVM.ImageUrl,
 					AddressId = clubVM.AddressId,
 					Address = clubVM.Address,
 					ClubCategory = clubVM.ClubCategory,
